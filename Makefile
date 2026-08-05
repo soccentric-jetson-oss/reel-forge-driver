@@ -3,13 +3,13 @@ DRV_VERSION := 0.1.0
 CC ?= gcc
 CFLAGS := -O2 -Wall -Wextra
 BUILD_DIR := build
-INCLUDES := -Iinclude
+INCLUDES := -Ilib/include -Iinclude
 
 all: lib test
 
 lib: $(BUILD_DIR)/lib$(DRV_NAME).so $(BUILD_DIR)/lib$(DRV_NAME).a
 
-$(BUILD_DIR)/lib$(DRV_NAME).o: lib/src/lib$(DRV_NAME).c include/$(DRV_NAME)_uapi.h
+$(BUILD_DIR)/lib$(DRV_NAME).o: lib/src/lib$(DRV_NAME).c include/reel_forge_uapi.h
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) -fPIC $(INCLUDES) -c -o $@ $<
 
