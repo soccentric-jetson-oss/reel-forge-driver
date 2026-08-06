@@ -77,6 +77,6 @@ static void __exit reel_forge_exit(void) {
     platform_driver_unregister(&reel_forge_driver); class_unregister(&reel_forge_class);
 }
 module_init(reel_forge_init); module_exit(reel_forge_exit);
-MODULE_AUTHOR("Sandesh <sandesh@soccentric.com>");
+MODULE_AUTHOR("Sandesh Ghimire <sandesh@soccentric.com>");
 MODULE_DESCRIPTION("Jetson AGX Orin video encode/decode driver");
 MODULE_LICENSE("GPL v2"); MODULE_VERSION(DRV_VERSION);
